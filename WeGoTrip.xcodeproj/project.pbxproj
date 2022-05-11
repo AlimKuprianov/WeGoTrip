@@ -11,9 +11,12 @@
 		DB44C712282BEFDF00ED59BF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44C711282BEFDF00ED59BF /* Router.swift */; };
 		DB44C714282BEFF600ED59BF /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44C713282BEFF600ED59BF /* ModuleBuilder.swift */; };
 		DB44C717282BF0E000ED59BF /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44C716282BF0E000ED59BF /* Presenter.swift */; };
+		DB70E8FB282BFC58001EEBB8 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70E8FA282BFC58001EEBB8 /* FeedbackViewController.swift */; };
+		DB86862B282BFD1800A1BCD5 /* InitializableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86862A282BFD1800A1BCD5 /* InitializableViewProtocol.swift */; };
+		DB868630282BFF1700A1BCD5 /* FeedbackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86862F282BFF1700A1BCD5 /* FeedbackPresenter.swift */; };
 		EE3C71FA282BEDF800947729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71F9282BEDF800947729 /* AppDelegate.swift */; };
 		EE3C71FC282BEDF800947729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71FB282BEDF800947729 /* SceneDelegate.swift */; };
-		EE3C71FE282BEDF800947729 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71FD282BEDF800947729 /* ViewController.swift */; };
+		EE3C71FE282BEDF800947729 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71FD282BEDF800947729 /* LaunchViewController.swift */; };
 		EE3C7203282BEDF900947729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE3C7202282BEDF900947729 /* Assets.xcassets */; };
 		EE3C7206282BEDF900947729 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE3C7204282BEDF900947729 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -25,10 +28,13 @@
 		DB44C711282BEFDF00ED59BF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DB44C713282BEFF600ED59BF /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		DB44C716282BF0E000ED59BF /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		DB70E8FA282BFC58001EEBB8 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		DB86862A282BFD1800A1BCD5 /* InitializableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializableViewProtocol.swift; sourceTree = "<group>"; };
+		DB86862F282BFF1700A1BCD5 /* FeedbackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPresenter.swift; sourceTree = "<group>"; };
 		EE3C71F6282BEDF800947729 /* WeGoTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeGoTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE3C71F9282BEDF800947729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE3C71FB282BEDF800947729 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE3C71FD282BEDF800947729 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE3C71FD282BEDF800947729 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		EE3C7202282BEDF900947729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE3C7205282BEDF900947729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE3C7207282BEDF900947729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,10 +81,27 @@
 		DB44C718282BF0FE00ED59BF /* LaunchModule */ = {
 			isa = PBXGroup;
 			children = (
-				EE3C71FD282BEDF800947729 /* ViewController.swift */,
+				EE3C71FD282BEDF800947729 /* LaunchViewController.swift */,
 				DB44C716282BF0E000ED59BF /* Presenter.swift */,
 			);
 			path = LaunchModule;
+			sourceTree = "<group>";
+		};
+		DB86862C282BFEA100A1BCD5 /* FirstReviewModule */ = {
+			isa = PBXGroup;
+			children = (
+				DB70E8FA282BFC58001EEBB8 /* FeedbackViewController.swift */,
+				DB86862F282BFF1700A1BCD5 /* FeedbackPresenter.swift */,
+			);
+			path = FirstReviewModule;
+			sourceTree = "<group>";
+		};
+		DB86862E282BFEC100A1BCD5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DB86862A282BFD1800A1BCD5 /* InitializableViewProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		EE3C71ED282BEDF800947729 = {
@@ -104,6 +127,8 @@
 			children = (
 				EE3C71F9282BEDF800947729 /* AppDelegate.swift */,
 				EE3C71FB282BEDF800947729 /* SceneDelegate.swift */,
+				DB86862E282BFEC100A1BCD5 /* Protocols */,
+				DB86862C282BFEA100A1BCD5 /* FirstReviewModule */,
 				DB44C718282BF0FE00ED59BF /* LaunchModule */,
 				DB44C715282BF04800ED59BF /* ModuleBuilder */,
 				EE3C7202282BEDF900947729 /* Assets.xcassets */,
@@ -226,10 +251,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB86862B282BFD1800A1BCD5 /* InitializableViewProtocol.swift in Sources */,
 				DB44C717282BF0E000ED59BF /* Presenter.swift in Sources */,
 				DB44C712282BEFDF00ED59BF /* Router.swift in Sources */,
-				EE3C71FE282BEDF800947729 /* ViewController.swift in Sources */,
+				DB70E8FB282BFC58001EEBB8 /* FeedbackViewController.swift in Sources */,
+				EE3C71FE282BEDF800947729 /* LaunchViewController.swift in Sources */,
 				EE3C71FA282BEDF800947729 /* AppDelegate.swift in Sources */,
+				DB868630282BFF1700A1BCD5 /* FeedbackPresenter.swift in Sources */,
 				DB44C714282BEFF600ED59BF /* ModuleBuilder.swift in Sources */,
 				EE3C71FC282BEDF800947729 /* SceneDelegate.swift in Sources */,
 			);

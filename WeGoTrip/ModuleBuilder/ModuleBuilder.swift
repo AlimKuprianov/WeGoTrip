@@ -18,7 +18,7 @@ class ModuleBuilder: ModuleBuilderProtocol {
     
     
     func createMain(router: RouterProtocol) -> UIViewController {
-        let view = ViewController()
+        let view = LaunchViewController()
         let presenter = LaunchPresenter(view: view, router: router)
         view.presenter = presenter
         return view
@@ -26,7 +26,7 @@ class ModuleBuilder: ModuleBuilderProtocol {
     
     func createReview(router: RouterProtocol) -> UIViewController {
         
-        let view = UIViewController()
+        let view = FeedbackViewController()
         
         return view
     }

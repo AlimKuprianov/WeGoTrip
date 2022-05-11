@@ -14,16 +14,16 @@ protocol ViewProtocol {
 }
 
 
-protocol ViewPresenterProtocol: AnyObject {
+protocol LaunchViewPresenterProtocol: AnyObject {
     init(view: ViewProtocol, router: RouterProtocol)
     func didPressLaunchButton()
 }
 
 
-final class LaunchPresenter: ViewPresenterProtocol {
+final class LaunchPresenter: LaunchViewPresenterProtocol {
     
     var view: ViewProtocol
-        let router: RouterProtocol
+    let router: RouterProtocol
     
     init(view: ViewProtocol, router: RouterProtocol) {
         self.view = view
@@ -31,7 +31,7 @@ final class LaunchPresenter: ViewPresenterProtocol {
     }
     
     func didPressLaunchButton() {
-        print("heyyyy")
+        router.showAnotherVC()
         view.disableLaunchButton()
     }
     

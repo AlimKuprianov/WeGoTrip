@@ -40,7 +40,8 @@ class Router: RouterProtocol {
     func showAnotherVC() {
         if let navigationController = navigationController {
             let reviewViewController = moduleBuilder.createReview(router: self)
-            navigationController.pushViewController(reviewViewController, animated: true)
+            navigationController.modalPresentationStyle = .custom
+            navigationController.present(reviewViewController, animated: true)
         }
     }
     
