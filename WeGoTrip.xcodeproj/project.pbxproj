@@ -3,24 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31B76BF582F11CF02C4EEDDE /* Pods_WeGoTrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D77A21B2076F169A640E64 /* Pods_WeGoTrip.framework */; };
+		DB44C712282BEFDF00ED59BF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44C711282BEFDF00ED59BF /* Router.swift */; };
+		DB44C714282BEFF600ED59BF /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44C713282BEFF600ED59BF /* ModuleBuilder.swift */; };
+		DB44C717282BF0E000ED59BF /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44C716282BF0E000ED59BF /* Presenter.swift */; };
 		EE3C71FA282BEDF800947729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71F9282BEDF800947729 /* AppDelegate.swift */; };
 		EE3C71FC282BEDF800947729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71FB282BEDF800947729 /* SceneDelegate.swift */; };
 		EE3C71FE282BEDF800947729 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71FD282BEDF800947729 /* ViewController.swift */; };
-		EE3C7201282BEDF800947729 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE3C71FF282BEDF800947729 /* Main.storyboard */; };
 		EE3C7203282BEDF900947729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE3C7202282BEDF900947729 /* Assets.xcassets */; };
 		EE3C7206282BEDF900947729 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE3C7204282BEDF900947729 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48D77A21B2076F169A640E64 /* Pods_WeGoTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeGoTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		862185A35E4BA5AE59E1B1B5 /* Pods-WeGoTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeGoTrip.release.xcconfig"; path = "Target Support Files/Pods-WeGoTrip/Pods-WeGoTrip.release.xcconfig"; sourceTree = "<group>"; };
+		D7DA3D50396F3AD26DFF64B4 /* Pods-WeGoTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeGoTrip.debug.xcconfig"; path = "Target Support Files/Pods-WeGoTrip/Pods-WeGoTrip.debug.xcconfig"; sourceTree = "<group>"; };
+		DB44C711282BEFDF00ED59BF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DB44C713282BEFF600ED59BF /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		DB44C716282BF0E000ED59BF /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		EE3C71F6282BEDF800947729 /* WeGoTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeGoTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE3C71F9282BEDF800947729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE3C71FB282BEDF800947729 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE3C71FD282BEDF800947729 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EE3C7200282BEDF800947729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE3C7202282BEDF900947729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE3C7205282BEDF900947729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE3C7207282BEDF900947729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,17 +39,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31B76BF582F11CF02C4EEDDE /* Pods_WeGoTrip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C221EB78B54B80B89063687 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7DA3D50396F3AD26DFF64B4 /* Pods-WeGoTrip.debug.xcconfig */,
+				862185A35E4BA5AE59E1B1B5 /* Pods-WeGoTrip.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AF1C54E96099A6952186F6A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48D77A21B2076F169A640E64 /* Pods_WeGoTrip.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB44C715282BF04800ED59BF /* ModuleBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				DB44C711282BEFDF00ED59BF /* Router.swift */,
+				DB44C713282BEFF600ED59BF /* ModuleBuilder.swift */,
+			);
+			path = ModuleBuilder;
+			sourceTree = "<group>";
+		};
+		DB44C718282BF0FE00ED59BF /* LaunchModule */ = {
+			isa = PBXGroup;
+			children = (
+				EE3C71FD282BEDF800947729 /* ViewController.swift */,
+				DB44C716282BF0E000ED59BF /* Presenter.swift */,
+			);
+			path = LaunchModule;
+			sourceTree = "<group>";
+		};
 		EE3C71ED282BEDF800947729 = {
 			isa = PBXGroup;
 			children = (
 				EE3C71F8282BEDF800947729 /* WeGoTrip */,
 				EE3C71F7282BEDF800947729 /* Products */,
+				6C221EB78B54B80B89063687 /* Pods */,
+				AF1C54E96099A6952186F6A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +104,8 @@
 			children = (
 				EE3C71F9282BEDF800947729 /* AppDelegate.swift */,
 				EE3C71FB282BEDF800947729 /* SceneDelegate.swift */,
-				EE3C71FD282BEDF800947729 /* ViewController.swift */,
-				EE3C71FF282BEDF800947729 /* Main.storyboard */,
+				DB44C718282BF0FE00ED59BF /* LaunchModule */,
+				DB44C715282BF04800ED59BF /* ModuleBuilder */,
 				EE3C7202282BEDF900947729 /* Assets.xcassets */,
 				EE3C7204282BEDF900947729 /* LaunchScreen.storyboard */,
 				EE3C7207282BEDF900947729 /* Info.plist */,
@@ -74,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE3C720A282BEDF900947729 /* Build configuration list for PBXNativeTarget "WeGoTrip" */;
 			buildPhases = (
+				573375313086C714DB28D22B /* [CP] Check Pods Manifest.lock */,
 				EE3C71F2282BEDF800947729 /* Sources */,
 				EE3C71F3282BEDF800947729 /* Frameworks */,
 				EE3C71F4282BEDF800947729 /* Resources */,
+				6AB945803D49A493774C31EF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,19 +174,63 @@
 			files = (
 				EE3C7206282BEDF900947729 /* LaunchScreen.storyboard in Resources */,
 				EE3C7203282BEDF900947729 /* Assets.xcassets in Resources */,
-				EE3C7201282BEDF800947729 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		573375313086C714DB28D22B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeGoTrip-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AB945803D49A493774C31EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeGoTrip/Pods-WeGoTrip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeGoTrip/Pods-WeGoTrip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeGoTrip/Pods-WeGoTrip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE3C71F2282BEDF800947729 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB44C717282BF0E000ED59BF /* Presenter.swift in Sources */,
+				DB44C712282BEFDF00ED59BF /* Router.swift in Sources */,
 				EE3C71FE282BEDF800947729 /* ViewController.swift in Sources */,
 				EE3C71FA282BEDF800947729 /* AppDelegate.swift in Sources */,
+				DB44C714282BEFF600ED59BF /* ModuleBuilder.swift in Sources */,
 				EE3C71FC282BEDF800947729 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,14 +238,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EE3C71FF282BEDF800947729 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE3C7200282BEDF800947729 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EE3C7204282BEDF900947729 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,6 +367,7 @@
 		};
 		EE3C720B282BEDF900947729 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7DA3D50396F3AD26DFF64B4 /* Pods-WeGoTrip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +387,7 @@
 		};
 		EE3C720C282BEDF900947729 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 862185A35E4BA5AE59E1B1B5 /* Pods-WeGoTrip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
