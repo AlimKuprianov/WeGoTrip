@@ -171,10 +171,53 @@ final class FeedbackViewController: UIViewController,
     }
     
     func bindViews() {
+        addTarget(self, firstRateSliderAction: #selector(didPressLaunchButton))
+    }
+    
+    @objc private func didPressLaunchButton(sender: UISlider!) {
+        sender.setValue(sender.value.rounded(), animated: true)
         
+        switch sender {
+        case firstRateSlider:
+            firstRateSlider.isContinuous = false
+            firstEmojiLabel.text = emojiArray[Int(sender.value.rounded())]
+        case rateGuideSlider:
+            rateGuideSlider.isContinuous = false
+            rateGuideEmoji.text = emojiArray[Int(sender.value.rounded())]
+        case rateInformationSlider:
+            rateInformationSlider.isContinuous = false
+            rateInformationEmoji.text = emojiArray[Int(sender.value.rounded())]
+        case rateNavigationSlider:
+            rateInformationSlider.isContinuous = false
+            rateNavigationEmoji.text = emojiArray[Int(sender.value.rounded())]
+            
+        default:
+            break
+        }
+    }
+    func addTarget(_ target: Any?, firstRateSliderAction: Selector) {
+        let arraysOfSliders = [firstRateSlider, rateGuideSlider, rateInformationSlider, rateNavigationSlider]
+        
+        for slider in arraysOfSliders {
+            slider.addTarget(target, action: firstRateSliderAction, for: .valueChanged)
+        }
+        //firstRateSlider.addTarget(target, action: firstRateSliderAction, for: .valueChanged)
     }
     
     func configureAppearance() {
+        
+        rateGuideSlider.minimumValue = 0
+        firstRateSlider.maximumValue = 4
+        
+        rateGuideSlider.minimumValue = 0
+        rateGuideSlider.maximumValue = 4
+        
+        rateInformationSlider.minimumValue = 0
+        rateInformationSlider.maximumValue = 4
+        
+        rateNavigationSlider.minimumValue = 0
+        rateNavigationSlider.maximumValue = 4
+        
         imageView.image = #imageLiteral(resourceName: "photo_2022-05-10 01.04.03")
         imageView.contentMode = .scaleAspectFill
         mainLabel.numberOfLines = 0
