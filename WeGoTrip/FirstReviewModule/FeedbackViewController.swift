@@ -43,7 +43,17 @@ final class FeedbackViewController: UIViewController,
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        setupImageView()
         initializeView()
+    }
+    
+    private func setupImageView() {
+        let url = ApiConstants.imageURL
+        NetworkService.shared.fetchImage(at: url, completion: { img in
+            DispatchQueue.main.async { [weak self] in
+                self?.imageView.image = img
+            }
+        })
     }
     
     func initializeView() {
@@ -250,7 +260,7 @@ final class FeedbackViewController: UIViewController,
         rateNavigationSlider.minimumValue = 0
         rateNavigationSlider.maximumValue = 4
         
-        imageView.image = #imageLiteral(resourceName: "photo_2022-05-10 01.04.03")
+        //imageView.image = #imageLiteral(resourceName: "photo_2022-05-10 01.04.03")
         imageView.contentMode = .scaleAspectFill
         mainLabel.numberOfLines = 0
         mainLabel.font = UIFont.boldSystemFont(ofSize: 22)

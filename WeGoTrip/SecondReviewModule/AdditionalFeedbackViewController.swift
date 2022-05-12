@@ -24,6 +24,7 @@ final class AdditionalFeedbackViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        setupImageView()
         initializeView()
     }
     
@@ -35,6 +36,14 @@ final class AdditionalFeedbackViewController: UIViewController {
 
     }
     
+    private func setupImageView() {
+        let url = ApiConstants.imageURL
+        NetworkService.shared.fetchImage(at: url, completion: { img in
+            DispatchQueue.main.async { [weak self] in
+                self?.imageView.image = img
+            }
+        })
+    }
 }
 
 
@@ -125,7 +134,7 @@ extension AdditionalFeedbackViewController: InitializableViewProtocol {
     func configureAppearance() {
         
         endEditingWhenTapped()
-        imageView.image = #imageLiteral(resourceName: "photo_2022-05-10 01.04.03")
+        //imageView.image = #imageLiteral(resourceName: "photo_2022-05-10 01.04.03")
         imageView.contentMode = .scaleAspectFill
         firstQuestionLabel.numberOfLines = 0
         firstQuestionLabel.font = UIFont.boldSystemFont(ofSize: 18)

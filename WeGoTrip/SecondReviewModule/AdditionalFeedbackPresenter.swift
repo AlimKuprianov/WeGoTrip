@@ -78,7 +78,12 @@ extension AdditionalFeedbackPresenter: AdditionalFeedbackPresenterProtocol {
                                            firstQuestion: whatsLikeTextView,
                                            secondQuestion: whatWillBeBetterTextView)
         
-        print(String(rateSlider), String(rateGuideSlider), whatsLikeTextView, whatWillBeBetterTextView)
+        print(String(rateSlider),
+              String(rateGuideSlider),
+              String(rateInformationSlider),
+              String(rateNavigationSlider),
+              whatsLikeTextView,
+              whatWillBeBetterTextView)
     }
     
     func didPressSkipButton() {

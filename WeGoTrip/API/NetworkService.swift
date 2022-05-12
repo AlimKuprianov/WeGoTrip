@@ -5,10 +5,13 @@
 //  Created by Белимготов Алим Робертович on 12.05.2022.
 //
 
-import Foundation
+import UIKit
 
 
 protocol NetworkServiceProtocol {
+    
+    func fetchImage(at url: URL,
+                    completion: @escaping (UIImage?) -> (Void))
     
     func saveFeedBackRequest(idTrip: String,
                              tourRate: String,
@@ -20,6 +23,23 @@ protocol NetworkServiceProtocol {
 }
 
 final class NetworkService: NetworkServiceProtocol {
+    
+    static let shared = NetworkService()
+    init() {}
+    
+    func fetchImage(at url: URL,
+                    completion: @escaping (UIImage?) -> (Void)) {
+        
+        
+        let request = URLRequest(url: url)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                let image = UIImage(data: data)
+                completion(image)
+            }
+        }
+        task.resume()
+    }
     
     func saveFeedBackRequest(idTrip: String,
                              tourRate: String,
