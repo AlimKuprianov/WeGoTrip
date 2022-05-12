@@ -10,7 +10,11 @@ import UIKit
 protocol ModuleBuilderProtocol {
     func createMain(router: RouterProtocol) -> UIViewController
     func createReview(router: RouterProtocol) -> UIViewController
-    func createAdditionalReview(router: RouterProtocol) -> UIViewController
+    func createAdditionalReview(router: RouterProtocol,
+                                rateSlider: Int,
+                                rateGuideSlider: Int,
+                                rateInformationSlider: Int,
+                                rateNavigationSlider: Int) -> UIViewController
 
 }
 
@@ -32,10 +36,21 @@ class ModuleBuilder: ModuleBuilderProtocol {
         return view
     }
     
-    func createAdditionalReview(router: RouterProtocol) -> UIViewController {
+    func createAdditionalReview(router: RouterProtocol,
+                                rateSlider: Int,
+                                rateGuideSlider: Int,
+                                rateInformationSlider: Int,
+                                rateNavigationSlider: Int) -> UIViewController {
+        
         let view = AdditionalFeedbackViewController()
         let networkService = NetworkService()
-        let presenter = AdditionalFeedbackPresenter(view: view, networkService: networkService, router: router)
+        let presenter = AdditionalFeedbackPresenter(view: view,
+                                                    networkService: networkService,
+                                                    router: router,
+                                                    rateSlider: rateSlider,
+                                                    rateGuideSlider: rateGuideSlider,
+                                                    rateInformationSlider: rateInformationSlider,
+                                                    rateNavigationSlider: rateNavigationSlider)
         view.presenter = presenter
         return view
     }

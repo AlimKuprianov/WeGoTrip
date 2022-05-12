@@ -15,7 +15,10 @@ protocol RouterMain {
 protocol RouterProtocol: RouterMain {
     func initialViewController()
     func showAnotherVC()
-    func showAdditionalVC()
+    func showAdditionalVC(withRateSlider: Int,
+                          withRateGuideSlider: Int,
+                          withRateInformationSlider: Int,
+                          withRateNavigationSlider: Int)
     func popToRoot()
 }
 
@@ -45,9 +48,18 @@ class Router: RouterProtocol {
         }
     }
     
-    func showAdditionalVC() {
+    func showAdditionalVC(withRateSlider: Int,
+                          withRateGuideSlider: Int,
+                          withRateInformationSlider: Int,
+                          withRateNavigationSlider: Int) {
+        
         if let navigationController = navigationController {
-            let additionalViewController = moduleBuilder.createAdditionalReview(router: self)
+            let additionalViewController = moduleBuilder.createAdditionalReview(router: self,
+                                                                                rateSlider: withRateSlider,
+                                                                                rateGuideSlider: withRateGuideSlider,
+                                                                                rateInformationSlider: withRateInformationSlider,
+                                                                                rateNavigationSlider: withRateNavigationSlider)
+            
             navigationController.view.window?.rootViewController?.isModalInPresentation = true
             navigationController.view.window?.rootViewController = additionalViewController
             navigationController.modalPresentationStyle = .custom

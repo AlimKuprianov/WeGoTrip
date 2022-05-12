@@ -116,7 +116,8 @@ extension AdditionalFeedbackViewController: InitializableViewProtocol {
     }
     
     @objc private func didPressSaveButton() {
-        self.presenter?.didPressSaveButton()
+        self.presenter?.didPressSaveButton(whatsLikeTextView: whatsLikeTextView.text,
+                                           whatWillBeBetterTextView: whatWillBeBetterTextView.text)
         
     }
     

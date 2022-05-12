@@ -18,7 +18,10 @@ protocol FeedbackViewProtocol {
 
 protocol FeedbackPresenterProtocol: AnyObject {
     init(view: FeedbackViewProtocol, router: RouterProtocol)
-    func didPressContinueButton()
+    func didPressContinueButton(withRateSlider: Int,
+                                withRateGuideSlider: Int,
+                                withRateInformationSlider: Int,
+                                withRateNavigationSlider: Int )
     func didPressNoAnswerButton()
 }
 
@@ -32,11 +35,26 @@ final class FeedbackPresenter:FeedbackPresenterProtocol {
         self.router = router
     }
     
-    func didPressContinueButton() {
+
+    func didPressContinueButton(withRateSlider: Int,
+                                withRateGuideSlider: Int,
+                                withRateInformationSlider: Int,
+                                withRateNavigationSlider: Int) {
+        
         view.startAnimatingButton()
-        router.showAdditionalVC()
-        //view.stopAnimatingButton()
+        print(withRateSlider, withRateGuideSlider, withRateInformationSlider, withRateNavigationSlider)
+        router.showAdditionalVC(withRateSlider: withRateSlider,
+                                withRateGuideSlider: withRateGuideSlider,
+                                withRateInformationSlider: withRateInformationSlider,
+                                withRateNavigationSlider: withRateNavigationSlider)
     }
+    
+    
+//    func didPressContinueButton() {
+//        view.startAnimatingButton()
+//        router.showAdditionalVC()
+//        //view.stopAnimatingButton()
+//    }
     
     func didPressNoAnswerButton() {
         router.popToRoot()

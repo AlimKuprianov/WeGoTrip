@@ -191,7 +191,10 @@ final class FeedbackViewController: UIViewController,
     }
     
     @objc private func didPressContinueButton() {
-        self.presenter?.didPressContinueButton()
+        self.presenter?.didPressContinueButton(withRateSlider: Int(firstRateSlider.value),
+                                               withRateGuideSlider: Int(rateGuideSlider.value),
+                                               withRateInformationSlider: Int(rateInformationSlider.value),
+                                               withRateNavigationSlider: Int(rateNavigationSlider.value))
         
     }
     
