@@ -16,7 +16,7 @@ protocol AdditionalFeedbackViewProtocol {
 
 
 protocol AdditionalFeedbackPresenterProtocol: AnyObject {
-    init(view: AdditionalFeedbackViewProtocol, router: RouterProtocol)
+    init(view: AdditionalFeedbackViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     func didPressSaveButton()
     func didPressSkipButton()
 }
@@ -25,12 +25,19 @@ final class AdditionalFeedbackPresenter {
 
     
     var view: AdditionalFeedbackViewProtocol
+    var networkService: NetworkServiceProtocol
     let router: RouterProtocol
     
-    init(view: AdditionalFeedbackViewProtocol, router: RouterProtocol) {
+    init(view: AdditionalFeedbackViewProtocol,
+         networkService: NetworkServiceProtocol,
+         router: RouterProtocol) {
+        
         self.view = view
+        self.networkService = networkService
         self.router = router
     }
+    
+    
     
 }
 
@@ -38,7 +45,14 @@ final class AdditionalFeedbackPresenter {
 extension AdditionalFeedbackPresenter: AdditionalFeedbackPresenterProtocol {
     
     func didPressSaveButton() {
-        print("hello")
+        
+        networkService.saveFeedBackRequest(idTrip: <#T##String#>,
+                                           tourRate: <#T##String#>,
+                                           guideRate: <#T##String#>,
+                                           informationRate: <#T##String#>,
+                                           navigationRate: <#T##String#>,
+                                           firstQuestion: <#T##String#>,
+                                           secondQuestion: <#T##String#>)
     }
     
     func didPressSkipButton() {

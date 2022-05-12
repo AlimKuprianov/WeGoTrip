@@ -11,6 +11,7 @@
 		DB020D59282D20F200FC1300 /* IQKeyboardManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB020D58282D20F200FC1300 /* IQKeyboardManagerExt.swift */; };
 		DB020D5B282D227F00FC1300 /* ViewController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB020D5A282D227F00FC1300 /* ViewController+ext.swift */; };
 		DB020D5D282D235C00FC1300 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB020D5C282D235C00FC1300 /* Model.swift */; };
+		DB020D61282D2EB900FC1300 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB020D60282D2EB900FC1300 /* NetworkService.swift */; };
 		DB44C712282BEFDF00ED59BF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44C711282BEFDF00ED59BF /* Router.swift */; };
 		DB44C714282BEFF600ED59BF /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44C713282BEFF600ED59BF /* ModuleBuilder.swift */; };
 		DB44C717282BF0E000ED59BF /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44C716282BF0E000ED59BF /* Presenter.swift */; };
@@ -19,6 +20,7 @@
 		DB868630282BFF1700A1BCD5 /* FeedbackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86862F282BFF1700A1BCD5 /* FeedbackPresenter.swift */; };
 		DB868634282C682D00A1BCD5 /* AdditionalFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB868633282C682D00A1BCD5 /* AdditionalFeedbackViewController.swift */; };
 		DB868637282D108E00A1BCD5 /* AdditionalFeedbackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB868636282D108E00A1BCD5 /* AdditionalFeedbackPresenter.swift */; };
+		DBEEF3C9282D3A3000E909BF /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEF3C8282D3A3000E909BF /* ApiConstants.swift */; };
 		EE3C71FA282BEDF800947729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71F9282BEDF800947729 /* AppDelegate.swift */; };
 		EE3C71FC282BEDF800947729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71FB282BEDF800947729 /* SceneDelegate.swift */; };
 		EE3C71FE282BEDF800947729 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71FD282BEDF800947729 /* LaunchViewController.swift */; };
@@ -33,6 +35,7 @@
 		DB020D58282D20F200FC1300 /* IQKeyboardManagerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQKeyboardManagerExt.swift; sourceTree = "<group>"; };
 		DB020D5A282D227F00FC1300 /* ViewController+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ext.swift"; sourceTree = "<group>"; };
 		DB020D5C282D235C00FC1300 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		DB020D60282D2EB900FC1300 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		DB44C711282BEFDF00ED59BF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DB44C713282BEFF600ED59BF /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		DB44C716282BF0E000ED59BF /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
@@ -41,6 +44,7 @@
 		DB86862F282BFF1700A1BCD5 /* FeedbackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPresenter.swift; sourceTree = "<group>"; };
 		DB868633282C682D00A1BCD5 /* AdditionalFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedbackViewController.swift; sourceTree = "<group>"; };
 		DB868636282D108E00A1BCD5 /* AdditionalFeedbackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedbackPresenter.swift; sourceTree = "<group>"; };
+		DBEEF3C8282D3A3000E909BF /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		EE3C71F6282BEDF800947729 /* WeGoTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeGoTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE3C71F9282BEDF800947729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE3C71FB282BEDF800947729 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,15 @@
 				DB020D5C282D235C00FC1300 /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DB020D5F282D2EA300FC1300 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DB020D60282D2EB900FC1300 /* NetworkService.swift */,
+				DBEEF3C8282D3A3000E909BF /* ApiConstants.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		DB44C715282BF04800ED59BF /* ModuleBuilder */ = {
@@ -154,6 +167,7 @@
 		EE3C71F8282BEDF800947729 /* WeGoTrip */ = {
 			isa = PBXGroup;
 			children = (
+				DB020D5F282D2EA300FC1300 /* API */,
 				EE3C71F9282BEDF800947729 /* AppDelegate.swift */,
 				EE3C71FB282BEDF800947729 /* SceneDelegate.swift */,
 				DB020D5E282D236400FC1300 /* Model */,
@@ -286,9 +300,11 @@
 				DB86862B282BFD1800A1BCD5 /* InitializableViewProtocol.swift in Sources */,
 				DB44C717282BF0E000ED59BF /* Presenter.swift in Sources */,
 				DB020D59282D20F200FC1300 /* IQKeyboardManagerExt.swift in Sources */,
+				DBEEF3C9282D3A3000E909BF /* ApiConstants.swift in Sources */,
 				DB44C712282BEFDF00ED59BF /* Router.swift in Sources */,
 				DB70E8FB282BFC58001EEBB8 /* FeedbackViewController.swift in Sources */,
 				EE3C71FE282BEDF800947729 /* LaunchViewController.swift in Sources */,
+				DB020D61282D2EB900FC1300 /* NetworkService.swift in Sources */,
 				EE3C71FA282BEDF800947729 /* AppDelegate.swift in Sources */,
 				DB868637282D108E00A1BCD5 /* AdditionalFeedbackPresenter.swift in Sources */,
 				DB020D5B282D227F00FC1300 /* ViewController+ext.swift in Sources */,

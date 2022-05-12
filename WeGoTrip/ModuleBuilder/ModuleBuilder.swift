@@ -34,7 +34,8 @@ class ModuleBuilder: ModuleBuilderProtocol {
     
     func createAdditionalReview(router: RouterProtocol) -> UIViewController {
         let view = AdditionalFeedbackViewController()
-        let presenter = AdditionalFeedbackPresenter(view: view, router: router)
+        let networkService = NetworkService()
+        let presenter = AdditionalFeedbackPresenter(view: view, networkService: networkService, router: router)
         view.presenter = presenter
         return view
     }
