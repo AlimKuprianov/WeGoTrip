@@ -87,7 +87,7 @@ extension AdditionalFeedbackPresenter: AdditionalFeedbackPresenterProtocol {
     }
     
     func didPressSkipButton() {
-        print("hello2")
+        router.popToRoot()
 
     }
     

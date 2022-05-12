@@ -48,16 +48,12 @@ final class FeedbackPresenter:FeedbackPresenterProtocol {
                                 withRateInformationSlider: withRateInformationSlider,
                                 withRateNavigationSlider: withRateNavigationSlider)
     }
-    
-    
-//    func didPressContinueButton() {
-//        view.startAnimatingButton()
-//        router.showAdditionalVC()
-//        //view.stopAnimatingButton()
-//    }
+
     
     func didPressNoAnswerButton() {
         router.popToRoot()
+        view.stopAnimatingButton()
+        view.enableContinueButton()
     }
     
     

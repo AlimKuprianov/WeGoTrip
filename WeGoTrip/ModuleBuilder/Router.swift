@@ -70,7 +70,7 @@ class Router: RouterProtocol {
     func popToRoot() {
         if let navigationController = navigationController {
             //navigationController.popToRootViewController(animated: true)
-            navigationController.dismiss(animated: true, completion: nil)
+           navigationController.dismiss(animated: true, completion: nil)
         }
     }
     
