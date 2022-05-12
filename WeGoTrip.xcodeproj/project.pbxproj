@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		31B76BF582F11CF02C4EEDDE /* Pods_WeGoTrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D77A21B2076F169A640E64 /* Pods_WeGoTrip.framework */; };
+		DB020D59282D20F200FC1300 /* IQKeyboardManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB020D58282D20F200FC1300 /* IQKeyboardManagerExt.swift */; };
+		DB020D5B282D227F00FC1300 /* ViewController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB020D5A282D227F00FC1300 /* ViewController+ext.swift */; };
+		DB020D5D282D235C00FC1300 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB020D5C282D235C00FC1300 /* Model.swift */; };
 		DB44C712282BEFDF00ED59BF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44C711282BEFDF00ED59BF /* Router.swift */; };
 		DB44C714282BEFF600ED59BF /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44C713282BEFF600ED59BF /* ModuleBuilder.swift */; };
 		DB44C717282BF0E000ED59BF /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44C716282BF0E000ED59BF /* Presenter.swift */; };
 		DB70E8FB282BFC58001EEBB8 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70E8FA282BFC58001EEBB8 /* FeedbackViewController.swift */; };
 		DB86862B282BFD1800A1BCD5 /* InitializableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86862A282BFD1800A1BCD5 /* InitializableViewProtocol.swift */; };
 		DB868630282BFF1700A1BCD5 /* FeedbackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86862F282BFF1700A1BCD5 /* FeedbackPresenter.swift */; };
-		DB868632282C214F00A1BCD5 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB868631282C214F00A1BCD5 /* SliderView.swift */; };
+		DB868634282C682D00A1BCD5 /* AdditionalFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB868633282C682D00A1BCD5 /* AdditionalFeedbackViewController.swift */; };
+		DB868637282D108E00A1BCD5 /* AdditionalFeedbackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB868636282D108E00A1BCD5 /* AdditionalFeedbackPresenter.swift */; };
 		EE3C71FA282BEDF800947729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71F9282BEDF800947729 /* AppDelegate.swift */; };
 		EE3C71FC282BEDF800947729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71FB282BEDF800947729 /* SceneDelegate.swift */; };
 		EE3C71FE282BEDF800947729 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71FD282BEDF800947729 /* LaunchViewController.swift */; };
@@ -26,13 +30,17 @@
 		48D77A21B2076F169A640E64 /* Pods_WeGoTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeGoTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		862185A35E4BA5AE59E1B1B5 /* Pods-WeGoTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeGoTrip.release.xcconfig"; path = "Target Support Files/Pods-WeGoTrip/Pods-WeGoTrip.release.xcconfig"; sourceTree = "<group>"; };
 		D7DA3D50396F3AD26DFF64B4 /* Pods-WeGoTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeGoTrip.debug.xcconfig"; path = "Target Support Files/Pods-WeGoTrip/Pods-WeGoTrip.debug.xcconfig"; sourceTree = "<group>"; };
+		DB020D58282D20F200FC1300 /* IQKeyboardManagerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQKeyboardManagerExt.swift; sourceTree = "<group>"; };
+		DB020D5A282D227F00FC1300 /* ViewController+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ext.swift"; sourceTree = "<group>"; };
+		DB020D5C282D235C00FC1300 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DB44C711282BEFDF00ED59BF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DB44C713282BEFF600ED59BF /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		DB44C716282BF0E000ED59BF /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		DB70E8FA282BFC58001EEBB8 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		DB86862A282BFD1800A1BCD5 /* InitializableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializableViewProtocol.swift; sourceTree = "<group>"; };
 		DB86862F282BFF1700A1BCD5 /* FeedbackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPresenter.swift; sourceTree = "<group>"; };
-		DB868631282C214F00A1BCD5 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		DB868633282C682D00A1BCD5 /* AdditionalFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedbackViewController.swift; sourceTree = "<group>"; };
+		DB868636282D108E00A1BCD5 /* AdditionalFeedbackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedbackPresenter.swift; sourceTree = "<group>"; };
 		EE3C71F6282BEDF800947729 /* WeGoTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeGoTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE3C71F9282BEDF800947729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE3C71FB282BEDF800947729 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +79,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DB020D5E282D236400FC1300 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB020D5C282D235C00FC1300 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DB44C715282BF04800ED59BF /* ModuleBuilder */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,13 +114,23 @@
 			path = FirstReviewModule;
 			sourceTree = "<group>";
 		};
-		DB86862E282BFEC100A1BCD5 /* Protocols */ = {
+		DB86862E282BFEC100A1BCD5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				DB86862A282BFD1800A1BCD5 /* InitializableViewProtocol.swift */,
-				DB868631282C214F00A1BCD5 /* SliderView.swift */,
+				DB020D58282D20F200FC1300 /* IQKeyboardManagerExt.swift */,
+				DB020D5A282D227F00FC1300 /* ViewController+ext.swift */,
 			);
-			path = Protocols;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DB868635282C683400A1BCD5 /* SecondReviewModule */ = {
+			isa = PBXGroup;
+			children = (
+				DB868633282C682D00A1BCD5 /* AdditionalFeedbackViewController.swift */,
+				DB868636282D108E00A1BCD5 /* AdditionalFeedbackPresenter.swift */,
+			);
+			path = SecondReviewModule;
 			sourceTree = "<group>";
 		};
 		EE3C71ED282BEDF800947729 = {
@@ -130,7 +156,9 @@
 			children = (
 				EE3C71F9282BEDF800947729 /* AppDelegate.swift */,
 				EE3C71FB282BEDF800947729 /* SceneDelegate.swift */,
-				DB86862E282BFEC100A1BCD5 /* Protocols */,
+				DB020D5E282D236400FC1300 /* Model */,
+				DB868635282C683400A1BCD5 /* SecondReviewModule */,
+				DB86862E282BFEC100A1BCD5 /* Extensions */,
 				DB86862C282BFEA100A1BCD5 /* FirstReviewModule */,
 				DB44C718282BF0FE00ED59BF /* LaunchModule */,
 				DB44C715282BF04800ED59BF /* ModuleBuilder */,
@@ -254,16 +282,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB020D5D282D235C00FC1300 /* Model.swift in Sources */,
 				DB86862B282BFD1800A1BCD5 /* InitializableViewProtocol.swift in Sources */,
 				DB44C717282BF0E000ED59BF /* Presenter.swift in Sources */,
+				DB020D59282D20F200FC1300 /* IQKeyboardManagerExt.swift in Sources */,
 				DB44C712282BEFDF00ED59BF /* Router.swift in Sources */,
 				DB70E8FB282BFC58001EEBB8 /* FeedbackViewController.swift in Sources */,
 				EE3C71FE282BEDF800947729 /* LaunchViewController.swift in Sources */,
 				EE3C71FA282BEDF800947729 /* AppDelegate.swift in Sources */,
+				DB868637282D108E00A1BCD5 /* AdditionalFeedbackPresenter.swift in Sources */,
+				DB020D5B282D227F00FC1300 /* ViewController+ext.swift in Sources */,
 				DB868630282BFF1700A1BCD5 /* FeedbackPresenter.swift in Sources */,
+				DB868634282C682D00A1BCD5 /* AdditionalFeedbackViewController.swift in Sources */,
 				DB44C714282BEFF600ED59BF /* ModuleBuilder.swift in Sources */,
 				EE3C71FC282BEDF800947729 /* SceneDelegate.swift in Sources */,
-				DB868632282C214F00A1BCD5 /* SliderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

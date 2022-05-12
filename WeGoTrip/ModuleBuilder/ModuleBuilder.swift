@@ -27,13 +27,15 @@ class ModuleBuilder: ModuleBuilderProtocol {
     func createReview(router: RouterProtocol) -> UIViewController {
         
         let view = FeedbackViewController()
-        
+        let presenter = FeedbackPresenter(view: view, router: router)
+        view.presenter = presenter
         return view
     }
     
     func createAdditionalReview(router: RouterProtocol) -> UIViewController {
-        let view = UIViewController()
-        
+        let view = AdditionalFeedbackViewController()
+        let presenter = AdditionalFeedbackPresenter(view: view, router: router)
+        view.presenter = presenter
         return view
     }
 }

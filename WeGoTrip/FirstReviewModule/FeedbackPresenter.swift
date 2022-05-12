@@ -7,15 +7,41 @@
 
 import Foundation
 
-final class FeedbackPresenter {
+
+protocol FeedbackViewProtocol {
+    func enableContinueButton()
+    func disableContinueButton()
+    func startAnimatingButton()
+    func stopAnimatingButton()
+}
+
+
+protocol FeedbackPresenterProtocol: AnyObject {
+    init(view: FeedbackViewProtocol, router: RouterProtocol)
+    func didPressContinueButton()
+    func didPressNoAnswerButton()
+}
+
+final class FeedbackPresenter:FeedbackPresenterProtocol {
     
-    var view: ViewProtocol
+    var view: FeedbackViewProtocol
     let router: RouterProtocol
     
-    init(view: ViewProtocol, router: RouterProtocol) {
+    init(view: FeedbackViewProtocol, router: RouterProtocol) {
         self.view = view
         self.router = router
     }
+    
+    func didPressContinueButton() {
+        view.startAnimatingButton()
+        router.showAdditionalVC()
+        //view.stopAnimatingButton()
+    }
+    
+    func didPressNoAnswerButton() {
+        router.popToRoot()
+    }
+    
     
     
 }

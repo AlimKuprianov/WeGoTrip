@@ -48,13 +48,17 @@ class Router: RouterProtocol {
     func showAdditionalVC() {
         if let navigationController = navigationController {
             let additionalViewController = moduleBuilder.createAdditionalReview(router: self)
-            navigationController.pushViewController(additionalViewController, animated: true)
+            navigationController.view.window?.rootViewController?.isModalInPresentation = true
+            navigationController.view.window?.rootViewController = additionalViewController
+            navigationController.modalPresentationStyle = .custom
+            navigationController.present(additionalViewController, animated: true, completion: nil)
         }
     }
         
     func popToRoot() {
         if let navigationController = navigationController {
-            navigationController.popToRootViewController(animated: true)
+            //navigationController.popToRootViewController(animated: true)
+            navigationController.dismiss(animated: true, completion: nil)
         }
     }
     

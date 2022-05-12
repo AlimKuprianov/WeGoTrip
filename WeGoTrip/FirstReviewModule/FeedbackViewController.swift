@@ -10,6 +10,7 @@ import UIKit
 final class FeedbackViewController: UIViewController,
                                     InitializableViewProtocol {
     
+    
     private let imageView = UIImageView()
     private let mainLabel = UILabel()
     private let firstRateLabel = UILabel()
@@ -30,9 +31,11 @@ final class FeedbackViewController: UIViewController,
     
     private let continueButton = UIButton(type: .system)
     private let noAnswerButton = UIButton(type: .system)
+    private let activityIndicator = UIActivityIndicatorView(style: .medium)
 
 
-    
+    var presenter: FeedbackPresenterProtocol?
+
     let emojiArray = ["😡", "☹️", "😐", "☺️", "😀"]
 
     
@@ -70,6 +73,7 @@ final class FeedbackViewController: UIViewController,
         view.addSubview(rateNavigationSlider)
         
         view.addSubview(continueButton)
+        continueButton.addSubview(activityIndicator)
         view.addSubview(noAnswerButton)
     }
     
@@ -163,6 +167,12 @@ final class FeedbackViewController: UIViewController,
             $0.height.equalToSuperview().dividedBy(15)
         }
         
+        activityIndicator.snp.makeConstraints {
+            $0.centerX.equalTo(continueButton)
+            $0.centerY.equalTo(continueButton)
+
+        }
+        
         noAnswerButton.snp.makeConstraints {
             $0.top.equalTo(continueButton).offset(70)
             $0.leading.trailing.equalToSuperview().inset(25)
@@ -171,10 +181,21 @@ final class FeedbackViewController: UIViewController,
     }
     
     func bindViews() {
-        addTarget(self, firstRateSliderAction: #selector(didPressLaunchButton))
+        addTarget(self, sliderAction: #selector(didPressSliders))
+        addTarget(self, continueButtonPressedAction: #selector(didPressContinueButton))
+        addTarget(self, noAnswerButtonPressedAction: #selector(didPressNoAnswerButton))
     }
     
-    @objc private func didPressLaunchButton(sender: UISlider!) {
+    @objc private func didPressNoAnswerButton() {
+        self.presenter?.didPressNoAnswerButton()
+    }
+    
+    @objc private func didPressContinueButton() {
+        self.presenter?.didPressContinueButton()
+        
+    }
+    
+    @objc private func didPressSliders(sender: UISlider!) {
         sender.setValue(sender.value.rounded(), animated: true)
         
         switch sender {
@@ -195,13 +216,21 @@ final class FeedbackViewController: UIViewController,
             break
         }
     }
-    func addTarget(_ target: Any?, firstRateSliderAction: Selector) {
+    
+    func addTarget(_ target: Any?, sliderAction: Selector) {
         let arraysOfSliders = [firstRateSlider, rateGuideSlider, rateInformationSlider, rateNavigationSlider]
         
         for slider in arraysOfSliders {
-            slider.addTarget(target, action: firstRateSliderAction, for: .valueChanged)
+            slider.addTarget(target, action: sliderAction, for: .valueChanged)
         }
-        //firstRateSlider.addTarget(target, action: firstRateSliderAction, for: .valueChanged)
+    }
+    
+    func addTarget(_ target: Any?, continueButtonPressedAction: Selector) {
+        continueButton.addTarget(target, action: continueButtonPressedAction, for: .touchUpInside)
+    }
+    
+    func addTarget(_ target: Any?, noAnswerButtonPressedAction: Selector) {
+        noAnswerButton.addTarget(target, action: noAnswerButtonPressedAction, for: .touchUpInside)
     }
     
     func configureAppearance() {
@@ -252,5 +281,33 @@ final class FeedbackViewController: UIViewController,
         imageView.clipsToBounds = true
 
     }
+    
+}
+
+
+//MARK: - FeedbackViewProtocol
+
+extension FeedbackViewController: FeedbackViewProtocol {
+    
+    func enableContinueButton() {
+        continueButton.isEnabled = true
+        continueButton.alpha = 1
+    }
+    
+    func disableContinueButton() {
+        continueButton.isEnabled = true
+        continueButton.alpha = 1
+    }
+    
+    func startAnimatingButton() {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    func stopAnimatingButton() {
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+    }
+
     
 }
