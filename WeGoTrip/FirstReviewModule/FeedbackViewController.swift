@@ -6,9 +6,9 @@
 //
 
 import UIKit
+import SnapKit
 
-final class FeedbackViewController: UIViewController,
-                                    InitializableViewProtocol {
+final class FeedbackViewController: UIViewController {
     
     
     private let imageView = UIImageView()
@@ -54,146 +54,6 @@ final class FeedbackViewController: UIViewController,
                 self?.imageView.image = img
             }
         })
-    }
-    
-    func initializeView() {
- 
-        addViews()
-        configureLayout()
-        bindViews()
-        configureAppearance()
-        localize()
-    }
-    
-    func addViews() {
-        view.addSubview(imageView)
-        view.addSubview(mainLabel)
-        view.addSubview(firstRateLabel)
-        view.addSubview(firstEmojiLabel)
-        view.addSubview(firstRateSlider)
-        
-        view.addSubview(rateGuideLabel)
-        view.addSubview(rateGuideEmoji)
-        view.addSubview(rateGuideSlider)
-        view.addSubview(rateInformationLabel)
-        view.addSubview(rateInformationEmoji)
-        view.addSubview(rateInformationSlider)
-        view.addSubview(rateNavigationLabel)
-        view.addSubview(rateNavigationEmoji)
-        view.addSubview(rateNavigationSlider)
-        
-        view.addSubview(continueButton)
-        continueButton.addSubview(activityIndicator)
-        view.addSubview(noAnswerButton)
-    }
-    
-    func configureLayout() {
-        
-        imageView.snp.makeConstraints {
-            $0.leading.equalTo(25)
-            $0.top.equalTo(25)
-            $0.width.equalTo(75)
-            $0.height.equalTo(75)
-            
-        }
-        
-        mainLabel.snp.makeConstraints {
-            $0.top.equalTo(imageView.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(25)
-        }
-        
-        firstRateLabel.snp.makeConstraints {
-            $0.top.equalTo(mainLabel.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(25)
-        }
-        
-        firstEmojiLabel.snp.makeConstraints {
-            $0.top.equalTo(mainLabel.snp.bottom).offset(30)
-            $0.trailing.equalToSuperview().inset(25)
-        }
-        
-        firstRateSlider.snp.makeConstraints {
-            $0.top.equalTo(firstRateLabel.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(25)
-        }
-        
-        
-        
-        
-        rateGuideLabel.snp.makeConstraints {
-            $0.top.equalTo(firstRateSlider.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(25)
-        }
-        
-        rateGuideEmoji.snp.makeConstraints {
-            $0.top.equalTo(rateGuideLabel)
-            $0.trailing.equalToSuperview().inset(25)
-        }
-        
-        rateGuideSlider.snp.makeConstraints {
-            $0.top.equalTo(rateGuideLabel.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(25)
-        }
-        
-        
-        
-        
-        rateInformationLabel.snp.makeConstraints {
-            $0.top.equalTo(rateGuideSlider.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(25)
-        }
-        
-        rateInformationEmoji.snp.makeConstraints {
-            $0.top.equalTo(rateInformationLabel)
-            $0.trailing.equalToSuperview().inset(25)
-        }
-        
-        rateInformationSlider.snp.makeConstraints {
-            $0.top.equalTo(rateInformationLabel.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(25)
-        }
-        
-        
-        
-        
-        rateNavigationLabel.snp.makeConstraints {
-            $0.top.equalTo(rateInformationSlider.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(25)
-        }
-        
-        rateNavigationEmoji.snp.makeConstraints {
-            $0.top.equalTo(rateNavigationLabel)
-            $0.trailing.equalToSuperview().inset(25)
-        }
-        
-        rateNavigationSlider.snp.makeConstraints {
-            $0.top.equalTo(rateNavigationLabel.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(25)
-        }
-        
-        continueButton.snp.makeConstraints {
-            $0.top.equalTo(rateNavigationSlider).offset(60)
-            $0.leading.trailing.equalToSuperview().inset(25)
-            $0.height.equalToSuperview().dividedBy(15)
-        }
-        
-        activityIndicator.snp.makeConstraints {
-            $0.centerX.equalTo(continueButton)
-            $0.centerY.equalTo(continueButton)
-
-        }
-        
-        noAnswerButton.snp.makeConstraints {
-            $0.top.equalTo(continueButton).offset(70)
-            $0.leading.trailing.equalToSuperview().inset(25)
-        }
-        
-    }
-    
-    func bindViews() {
-        addTarget(self, sliderAction: #selector(didPressSliders))
-        addTarget(self, continueButtonPressedAction: #selector(didPressContinueButton))
-        addTarget(self, noAnswerButtonPressedAction: #selector(didPressNoAnswerButton))
     }
     
     @objc private func didPressNoAnswerButton() {
@@ -246,6 +106,157 @@ final class FeedbackViewController: UIViewController,
         noAnswerButton.addTarget(target, action: noAnswerButtonPressedAction, for: .touchUpInside)
     }
     
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        //imageView.layer.cornerRadius = 0.5 * imageView.bounds.size.height
+       // imageView.clipsToBounds = true
+
+    }
+    
+}
+
+
+
+//MARK: - InitializableViewProtocol
+
+extension FeedbackViewController: InitializableViewProtocol {
+    
+    func initializeView() {
+ 
+        addViews()
+        configureLayout()
+        bindViews()
+        configureAppearance()
+        localize()
+    }
+    
+    func addViews() {
+        view.addSubview(imageView)
+        view.addSubview(mainLabel)
+        view.addSubview(firstRateLabel)
+        view.addSubview(firstEmojiLabel)
+        view.addSubview(firstRateSlider)
+        
+        view.addSubview(rateGuideLabel)
+        view.addSubview(rateGuideEmoji)
+        view.addSubview(rateGuideSlider)
+        view.addSubview(rateInformationLabel)
+        view.addSubview(rateInformationEmoji)
+        view.addSubview(rateInformationSlider)
+        view.addSubview(rateNavigationLabel)
+        view.addSubview(rateNavigationEmoji)
+        view.addSubview(rateNavigationSlider)
+        
+        view.addSubview(continueButton)
+        continueButton.addSubview(activityIndicator)
+        view.addSubview(noAnswerButton)
+    }
+    
+    func configureLayout() {
+        
+        imageView.snp.makeConstraints {
+            $0.leading.equalTo(25)
+            $0.top.equalTo(25)
+            $0.width.equalToSuperview().dividedBy(15)
+            $0.height.equalToSuperview().dividedBy(15)
+            
+        }
+        
+        mainLabel.snp.makeConstraints {
+            $0.top.equalTo(imageView.snp.bottom).offset(15)
+            $0.leading.trailing.equalToSuperview().inset(25)
+        }
+        
+        firstRateLabel.snp.makeConstraints {
+            $0.top.equalTo(mainLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(25)
+        }
+        
+        firstEmojiLabel.snp.makeConstraints {
+            $0.top.equalTo(mainLabel.snp.bottom).offset(20)
+            $0.trailing.equalToSuperview().inset(25)
+        }
+        
+        firstRateSlider.snp.makeConstraints {
+            $0.top.equalTo(firstRateLabel.snp.bottom).offset(15)
+            $0.leading.trailing.equalToSuperview().inset(25)
+        }
+                
+        
+        rateGuideLabel.snp.makeConstraints {
+            $0.top.equalTo(firstRateSlider.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(25)
+        }
+        
+        rateGuideEmoji.snp.makeConstraints {
+            $0.top.equalTo(rateGuideLabel)
+            $0.trailing.equalToSuperview().inset(25)
+        }
+        
+        rateGuideSlider.snp.makeConstraints {
+            $0.top.equalTo(rateGuideLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(25)
+        }
+        
+        
+        rateInformationLabel.snp.makeConstraints {
+            $0.top.equalTo(rateGuideSlider.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(25)
+        }
+        
+        rateInformationEmoji.snp.makeConstraints {
+            $0.top.equalTo(rateInformationLabel)
+            $0.trailing.equalToSuperview().inset(25)
+        }
+        
+        rateInformationSlider.snp.makeConstraints {
+            $0.top.equalTo(rateInformationLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(25)
+        }
+        
+        
+        rateNavigationLabel.snp.makeConstraints {
+            $0.top.equalTo(rateInformationSlider.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(25)
+        }
+        
+        rateNavigationEmoji.snp.makeConstraints {
+            $0.top.equalTo(rateNavigationLabel)
+            $0.trailing.equalToSuperview().inset(25)
+        }
+        
+        rateNavigationSlider.snp.makeConstraints {
+            $0.top.equalTo(rateNavigationLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(25)
+        }
+        
+        continueButton.snp.makeConstraints {
+            $0.top.equalTo(rateNavigationSlider).offset(60)
+            $0.leading.trailing.equalToSuperview().inset(25)
+            $0.height.equalToSuperview().dividedBy(15)
+        }
+        
+        activityIndicator.snp.makeConstraints {
+            $0.centerX.equalTo(continueButton)
+            $0.centerY.equalTo(continueButton)
+
+        }
+        
+        noAnswerButton.snp.makeConstraints {
+            $0.top.equalTo(continueButton).offset(60)
+            $0.leading.trailing.equalToSuperview().inset(25)
+        }
+        
+    }
+    
+    func bindViews() {
+        addTarget(self, sliderAction: #selector(didPressSliders))
+        addTarget(self, continueButtonPressedAction: #selector(didPressContinueButton))
+        addTarget(self, noAnswerButtonPressedAction: #selector(didPressNoAnswerButton))
+    }
+    
     func configureAppearance() {
         
         rateGuideSlider.minimumValue = 0
@@ -260,7 +271,6 @@ final class FeedbackViewController: UIViewController,
         rateNavigationSlider.minimumValue = 0
         rateNavigationSlider.maximumValue = 4
         
-        //imageView.image = #imageLiteral(resourceName: "photo_2022-05-10 01.04.03")
         imageView.contentMode = .scaleAspectFill
         mainLabel.numberOfLines = 0
         mainLabel.font = UIFont.boldSystemFont(ofSize: 22)
@@ -273,6 +283,7 @@ final class FeedbackViewController: UIViewController,
     }
     
     func localize() {
+        
         mainLabel.text = "Офигенно, Вы дошли до конца! Расскажите, как Вам?"
         firstRateLabel.text = "Как Вам тур в целом?"
         rateGuideLabel.text = "Понравился гид?"
@@ -285,17 +296,9 @@ final class FeedbackViewController: UIViewController,
         rateInformationEmoji.text = "😐"
         rateNavigationEmoji.text = "😐"
         
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        imageView.layer.cornerRadius = 0.5 * imageView.bounds.size.height
-        imageView.clipsToBounds = true
-
-    }
-    
+    }    
 }
+
 
 
 //MARK: - FeedbackViewProtocol
@@ -308,7 +311,7 @@ extension FeedbackViewController: FeedbackViewProtocol {
     }
     
     func disableContinueButton() {
-        continueButton.isEnabled = true
+        continueButton.isEnabled = false
         continueButton.alpha = 1
     }
     
@@ -320,7 +323,6 @@ extension FeedbackViewController: FeedbackViewProtocol {
     func stopAnimatingButton() {
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
+        activityIndicator.hidesWhenStopped = true
     }
-
-    
 }

@@ -43,6 +43,7 @@ final class FeedbackPresenter:FeedbackPresenterProtocol {
         
         view.startAnimatingButton()
         print(withRateSlider, withRateGuideSlider, withRateInformationSlider, withRateNavigationSlider)
+        router.popToRoot()
         router.showAdditionalVC(withRateSlider: withRateSlider,
                                 withRateGuideSlider: withRateGuideSlider,
                                 withRateInformationSlider: withRateInformationSlider,
@@ -52,8 +53,7 @@ final class FeedbackPresenter:FeedbackPresenterProtocol {
     
     func didPressNoAnswerButton() {
         router.popToRoot()
-        view.stopAnimatingButton()
-        view.enableContinueButton()
+      
     }
     
     

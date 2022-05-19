@@ -13,13 +13,14 @@ protocol NetworkServiceProtocol {
     func fetchImage(at url: URL,
                     completion: @escaping (UIImage?) -> (Void))
     
-    func saveFeedBackRequest(idTrip: String,
-                             tourRate: String,
-                             guideRate: String,
-                             informationRate: String,
-                             navigationRate: String,
+    func saveFeedBackRequest(
+                             tourRate: Int,
+                             guideRate: Int,
+                             informationRate: Int,
+                             navigationRate: Int,
                              firstQuestion: String,
-                             secondQuestion: String)
+                             secondQuestion: String,
+                             completion: @escaping ((Error?) -> Void))
 }
 
 final class NetworkService: NetworkServiceProtocol {
@@ -41,17 +42,18 @@ final class NetworkService: NetworkServiceProtocol {
         task.resume()
     }
     
-    func saveFeedBackRequest(idTrip: String,
-                             tourRate: String,
-                             guideRate: String,
-                             informationRate: String,
-                             navigationRate: String,
+    func saveFeedBackRequest(
+                             tourRate: Int,
+                             guideRate: Int,
+                             informationRate: Int,
+                             navigationRate: Int,
                              firstQuestion: String,
-                             secondQuestion: String) {
+                             secondQuestion: String,
+                             completion: @escaping ((Error?) -> Void)) {
         
-        let urlComponents = URLComponents(string: ApiConstants.requstPath)
+        guard  let url = URL(string: "https://webhook.site/71827f63-784b-48e1-bad3-b1ecb9ed6371") else { return }
         
-        let data = ["idTrip": idTrip,
+        let data = [
                     "tourRate": tourRate,
                     "guideRate" : guideRate,
                     "informationRate" : informationRate,
@@ -59,9 +61,7 @@ final class NetworkService: NetworkServiceProtocol {
                     "firstQuestion": "\(firstQuestion)",
                     "secondQuestion": "\(secondQuestion)"] as [String : Any]
         
-        guard let finalURL = urlComponents?.url else { return }
-        
-        var request = URLRequest(url: finalURL)
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
         guard let httpBody = try? JSONSerialization.data(withJSONObject: data, options: []) else { return }
@@ -71,21 +71,17 @@ final class NetworkService: NetworkServiceProtocol {
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
             
-            guard let response = response, let data = data else { return }
+            guard let response = response, let data = data else {return}
             
+            completion(error)
             print(response)
             
             do {
-                let json = try JSONSerialization.jsonObject(with: data, options:[])
+                let json = try JSONSerialization.jsonObject(with: data, options:[.allowFragments])
                 print(json)
             } catch {
                 print(error)
             }
         }.resume()
     }
-    
-    
-    
-    
-    
 }

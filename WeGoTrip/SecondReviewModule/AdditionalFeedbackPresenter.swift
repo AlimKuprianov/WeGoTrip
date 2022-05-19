@@ -12,6 +12,9 @@ protocol AdditionalFeedbackViewProtocol {
     func disableContinueButton()
     func startAnimatingButton()
     func stopAnimatingButton()
+    func showErrorAlertMessage()
+    func showDoneAlertMessage()
+
 }
 
 
@@ -58,9 +61,7 @@ final class AdditionalFeedbackPresenter {
         self.rateInformationSlider = rateInformationSlider
         self.rateNavigationSlider = rateNavigationSlider
     }
-    
-    var idTrip = Int.random(in: 1..<100)
-    
+        
 }
 
 
@@ -69,21 +70,30 @@ extension AdditionalFeedbackPresenter: AdditionalFeedbackPresenterProtocol {
     func didPressSaveButton(whatsLikeTextView: String,
                             whatWillBeBetterTextView: String) {
         
-        
-        networkService.saveFeedBackRequest(idTrip: String(idTrip),
-                                           tourRate: String(rateSlider),
-                                           guideRate: String(rateGuideSlider),
-                                           informationRate: String(rateInformationSlider),
-                                           navigationRate: String(rateNavigationSlider),
+        networkService.saveFeedBackRequest(
+                                           tourRate: rateSlider,
+                                           guideRate: rateGuideSlider,
+                                           informationRate: rateInformationSlider,
+                                           navigationRate: rateNavigationSlider,
                                            firstQuestion: whatsLikeTextView,
-                                           secondQuestion: whatWillBeBetterTextView)
-        
-        print(String(rateSlider),
-              String(rateGuideSlider),
-              String(rateInformationSlider),
-              String(rateNavigationSlider),
+                                           secondQuestion: whatWillBeBetterTextView) { [weak self] error in
+         
+            DispatchQueue.main.async {
+                
+                if let error = error {
+                    self?.view.showErrorAlertMessage()
+                } else {
+                    self?.view.showDoneAlertMessage()
+                }
+            }
+        }
+            print(String(rateSlider),
+                  String(rateGuideSlider),
+                  String(rateInformationSlider),
+                  String(rateNavigationSlider),
               whatsLikeTextView,
               whatWillBeBetterTextView)
+        router.popToRoot()
     }
     
     func didPressSkipButton() {
@@ -92,5 +102,3 @@ extension AdditionalFeedbackPresenter: AdditionalFeedbackPresenterProtocol {
     }
     
 }
-
-    

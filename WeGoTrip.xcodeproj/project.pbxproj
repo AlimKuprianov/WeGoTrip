@@ -21,6 +21,7 @@
 		DB868634282C682D00A1BCD5 /* AdditionalFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB868633282C682D00A1BCD5 /* AdditionalFeedbackViewController.swift */; };
 		DB868637282D108E00A1BCD5 /* AdditionalFeedbackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB868636282D108E00A1BCD5 /* AdditionalFeedbackPresenter.swift */; };
 		DBEEF3C9282D3A3000E909BF /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEF3C8282D3A3000E909BF /* ApiConstants.swift */; };
+		DBF6F4C028362CF1001972EC /* UIAlert+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF6F4BF28362CF1001972EC /* UIAlert+Ext.swift */; };
 		EE3C71FA282BEDF800947729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71F9282BEDF800947729 /* AppDelegate.swift */; };
 		EE3C71FC282BEDF800947729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71FB282BEDF800947729 /* SceneDelegate.swift */; };
 		EE3C71FE282BEDF800947729 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C71FD282BEDF800947729 /* LaunchViewController.swift */; };
@@ -45,6 +46,7 @@
 		DB868633282C682D00A1BCD5 /* AdditionalFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedbackViewController.swift; sourceTree = "<group>"; };
 		DB868636282D108E00A1BCD5 /* AdditionalFeedbackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFeedbackPresenter.swift; sourceTree = "<group>"; };
 		DBEEF3C8282D3A3000E909BF /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		DBF6F4BF28362CF1001972EC /* UIAlert+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlert+Ext.swift"; sourceTree = "<group>"; };
 		EE3C71F6282BEDF800947729 /* WeGoTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeGoTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE3C71F9282BEDF800947729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE3C71FB282BEDF800947729 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				DB86862A282BFD1800A1BCD5 /* InitializableViewProtocol.swift */,
 				DB020D58282D20F200FC1300 /* IQKeyboardManagerExt.swift */,
 				DB020D5A282D227F00FC1300 /* ViewController+ext.swift */,
+				DBF6F4BF28362CF1001972EC /* UIAlert+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				DB020D5B282D227F00FC1300 /* ViewController+ext.swift in Sources */,
 				DB868630282BFF1700A1BCD5 /* FeedbackPresenter.swift in Sources */,
 				DB868634282C682D00A1BCD5 /* AdditionalFeedbackViewController.swift in Sources */,
+				DBF6F4C028362CF1001972EC /* UIAlert+Ext.swift in Sources */,
 				DB44C714282BEFF600ED59BF /* ModuleBuilder.swift in Sources */,
 				EE3C71FC282BEDF800947729 /* SceneDelegate.swift in Sources */,
 			);

@@ -8,10 +8,7 @@
 import UIKit
 import SnapKit
 
-final class LaunchViewController: UIViewController,
-                            InitializableViewProtocol,
-                            ViewProtocol {
-    
+final class LaunchViewController: UIViewController {
     
     //MARK: - Private
     
@@ -31,6 +28,30 @@ final class LaunchViewController: UIViewController,
         initializeView()
     }
     
+    override func viewDidLayoutSubviews() {
+        launchButton.layer.cornerRadius = 0.3 * launchButton.bounds.size.height
+        launchButton.clipsToBounds = true
+    }
+    
+    @objc private func didPressLaunchButton() {
+        self.presenter?.didPressLaunchButton()
+    }
+    
+    
+    func addTarget(_ target: Any?, launchButtonPressedAction: Selector) {
+        launchButton.addTarget(target, action: launchButtonPressedAction, for: .touchUpInside)
+    }
+    
+    
+
+
+}
+
+
+//MARK: - InitializableViewProtocol
+
+extension LaunchViewController: InitializableViewProtocol {
+    
     func initializeView() {
         addViews()
         configureLayout()
@@ -41,7 +62,6 @@ final class LaunchViewController: UIViewController,
     
     func addViews() {
         view.addSubview(launchButton)
-        launchButton.addSubview(activityIndicator)
         
     }
     
@@ -50,10 +70,6 @@ final class LaunchViewController: UIViewController,
             $0.bottom.equalToSuperview().inset(100)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalToSuperview().dividedBy(15)
-        }
-        activityIndicator.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview()
         }
     }
     
@@ -76,15 +92,13 @@ final class LaunchViewController: UIViewController,
     func bindViews() {
         addTarget(self, launchButtonPressedAction: #selector(didPressLaunchButton))
     }
-    
-    @objc private func didPressLaunchButton() {
-        self.presenter?.didPressLaunchButton()
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
-    }
-    
+}
 
-    
+
+//MARK: - ViewProtocol
+
+
+extension LaunchViewController: ViewProtocol {
     
     func enableLaunchButton() {
         launchButton.isEnabled = true
@@ -94,17 +108,17 @@ final class LaunchViewController: UIViewController,
     func disableLaunchButton() {
         launchButton.isEnabled = false
         launchButton.alpha = 0.4
-    }    
-    
-    override func viewDidLayoutSubviews() {
-        launchButton.layer.cornerRadius = 0.3 * launchButton.bounds.size.height
-        launchButton.clipsToBounds = true
     }
     
-    func addTarget(_ target: Any?, launchButtonPressedAction: Selector) {
-        launchButton.addTarget(target, action: launchButtonPressedAction, for: .touchUpInside)
+    func startAnimatingButton() {
+        activityIndicator.isHidden = false
+        launchButton.setTitle("", for: .normal)
+        activityIndicator.startAnimating()
     }
-
-
+    
+    func stopAnimatingButton() {
+        activityIndicator.isHidden = true
+        launchButton.setTitle("Начать", for: .normal)
+        activityIndicator.stopAnimating()
+    }
 }
-

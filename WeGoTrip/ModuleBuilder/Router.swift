@@ -26,6 +26,7 @@ protocol RouterProtocol: RouterMain {
 class Router: RouterProtocol {
     
     var navigationController: UINavigationController?
+    var viewController: UIViewController?
     var moduleBuilder: ModuleBuilderProtocol
     
     init(navigationController: UINavigationController, moduleBuilder: ModuleBuilderProtocol) {
@@ -60,8 +61,6 @@ class Router: RouterProtocol {
                                                                                 rateInformationSlider: withRateInformationSlider,
                                                                                 rateNavigationSlider: withRateNavigationSlider)
             
-            navigationController.view.window?.rootViewController?.isModalInPresentation = true
-            navigationController.view.window?.rootViewController = additionalViewController
             navigationController.modalPresentationStyle = .custom
             navigationController.present(additionalViewController, animated: true, completion: nil)
         }
@@ -69,7 +68,6 @@ class Router: RouterProtocol {
         
     func popToRoot() {
         if let navigationController = navigationController {
-            //navigationController.popToRootViewController(animated: true)
            navigationController.dismiss(animated: true, completion: nil)
         }
     }

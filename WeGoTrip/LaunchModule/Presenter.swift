@@ -11,6 +11,8 @@ import Foundation
 protocol ViewProtocol {
     func enableLaunchButton()
     func disableLaunchButton()
+    func startAnimatingButton()
+    func stopAnimatingButton()
 }
 
 
@@ -23,7 +25,7 @@ protocol LaunchViewPresenterProtocol: AnyObject {
 final class LaunchPresenter: LaunchViewPresenterProtocol {
     
     var view: ViewProtocol
-    let router: RouterProtocol
+    var router: RouterProtocol
     
     init(view: ViewProtocol, router: RouterProtocol) {
         self.view = view
@@ -32,7 +34,7 @@ final class LaunchPresenter: LaunchViewPresenterProtocol {
     
     func didPressLaunchButton() {
         router.showAnotherVC()
-        view.disableLaunchButton()
     }
+    
     
 }

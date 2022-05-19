@@ -134,7 +134,6 @@ extension AdditionalFeedbackViewController: InitializableViewProtocol {
     func configureAppearance() {
         
         endEditingWhenTapped()
-        //imageView.image = #imageLiteral(resourceName: "photo_2022-05-10 01.04.03")
         imageView.contentMode = .scaleAspectFill
         firstQuestionLabel.numberOfLines = 0
         firstQuestionLabel.font = UIFont.boldSystemFont(ofSize: 18)
@@ -207,6 +206,17 @@ extension AdditionalFeedbackViewController: UITextViewDelegate {
 
 extension AdditionalFeedbackViewController: AdditionalFeedbackViewProtocol {
     
+    
+    func showDoneAlertMessage() {
+        let message = "Ваш отзыв сохранен!"
+        showAlert(withMessage: message, actionHandler: nil)
+    }
+    
+    
+    func showErrorAlertMessage() {
+        let message = "Что-то пошло не так!"
+        showAlert(withMessage: message, actionHandler: nil)
+    }    
     
     func enableContinueButton() {
         
